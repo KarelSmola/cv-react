@@ -1,0 +1,23 @@
+.free-time {
+  height: 20rem;
+}
+
+.title-wrap {
+  justify-self: end;
+  align-self: start;
+}
+
+.title {
+  font-size: 7rem;
+}
+
+.content-wrap {
+  justify-self: start;
+  align-self: center;
+}
+
+.content-point {
+  font-size: 1.8rem;
+  font-weight: 00;
+  line-height: 1.5;
+}

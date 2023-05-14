@@ -6,12 +6,12 @@ const Navigation = () => {
   return (
     <nav className={classes.nav}>
       <ul className={classes["nav-list"]}>
-        <li className={classes["list-item"]}>
+        <li className={classes["nav-item"]}>
           <a className={classes["nav-link"]} href="aboutMe">
             About
           </a>
         </li>
-        <li>
+        <li className={classes["nav-item"]}>
           <a className={classes["nav-link"]} href="education">
             Education
           </a>
@@ -19,13 +19,13 @@ const Navigation = () => {
         <a className={classes["nav-link"]} href="work">
           Work
         </a>
-        <li>
+        <li className={classes["nav-item"]}>
           <a className={classes["nav-link"]} href="skills">
             Skills
           </a>
         </li>
-        <li>
-          <a className={classes["nav-link"]} href="freeTime">
+        <li className={classes["nav-item"]}>
+          <a className={classes["nav-link"]} href="#freeTime">
             Free time
           </a>
         </li>

@@ -6,6 +6,7 @@ import Stack from "./components/Stack";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Work from "./components/Work";
+import FreeTime from "./components/FreeTime";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Skills />
         <Education />
         <Work />
+        <FreeTime />
       </Wrapper>
     </main>
   );

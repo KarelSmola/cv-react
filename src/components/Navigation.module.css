@@ -3,7 +3,7 @@
   justify-content: flex-end;
   align-items: center;
   padding: 0 2rem;
-  height: 5rem;
+  height: 7rem;
   background-color: var(--main-color);
   position: sticky;
   width: 100%;
@@ -18,10 +18,30 @@
 }
 
 .list-item {
+  position: relative;
 }
 
 .nav-link {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-decoration: none;
   color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+.nav-link::after {
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: transform 0.3s ease-out;
+  transform: scale(0);
+  transform-origin: left;
+}
+
+.nav-link:hover::after {
+  transform: scale(1);
+  transform-origin: left;
 }
