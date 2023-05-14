@@ -1,10 +1,5 @@
-.education {
+.skills {
   height: 20rem;
-}
-
-.title-wrap {
-  justify-self: end;
-  align-self: start;
 }
 
 .title {
@@ -17,7 +12,7 @@
 }
 
 .content-point {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 00;
   line-height: 1.5;
 }

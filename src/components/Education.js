@@ -1,10 +1,11 @@
 import React from "react";
 
+import SectionWrapper from "./UI/SectionWrapper";
 import classes from "./Education.module.css";
 
 const Education = () => {
   return (
-    <section className={classes.education}>
+    <SectionWrapper className={classes.education}>
       <div className={classes["content-wrap"]}>
         <p className={classes["content-point"]}>
           Printing Industry High School of Prague
@@ -16,7 +17,7 @@ const Education = () => {
       <div className={classes["title-wrap"]}>
         <h1 className={classes.title}>Education</h1>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

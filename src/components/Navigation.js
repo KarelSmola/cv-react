@@ -8,7 +8,7 @@ const Navigation = () => {
       <ul className={classes["nav-list"]}>
         <li className={classes["list-item"]}>
           <a className={classes["nav-link"]} href="aboutMe">
-            About me
+            About
           </a>
         </li>
         <li>

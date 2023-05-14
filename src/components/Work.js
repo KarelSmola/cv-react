@@ -1,10 +1,11 @@
 import React from "react";
 
+import SectionWrapper from "./UI/SectionWrapper";
 import classes from "./Work.module.css";
 
 const Work = () => {
   return (
-    <section className={classes.work}>
+    <SectionWrapper className={classes.work}>
       <div className={classes["title-wrap"]}>
         <h1 className={classes.title}>Work</h1>
       </div>
@@ -41,7 +42,7 @@ const Work = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 
