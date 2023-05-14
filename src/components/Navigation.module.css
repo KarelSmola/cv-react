@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 2rem;
+  height: 5rem;
+  background-color: var(--main-color);
+  position: sticky;
+  width: 100%;
+  top: 0;
+  margin-bottom: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.list-item {
+}
+
+.nav-link {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fff;
+}
