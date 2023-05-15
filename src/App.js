@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "./components/Navigation";
 import Wrapper from "./components/UI/Wrapper";
-import About from "./components/About";
+import Personal from "./components/Personal";
 import Stack from "./components/Stack";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
@@ -13,7 +13,7 @@ const App = () => {
     <main>
       <Navigation />
       <Wrapper>
-        <About />
+        <Personal />
         <Stack />
         <Skills />
         <Education />
