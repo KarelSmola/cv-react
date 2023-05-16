@@ -4,21 +4,17 @@ import MapPin from "./UI/icons/MapPin";
 // import SectionWrapper from "./UI/SectionWrapper";
 import classes from "./Personal.module.css";
 
+const transitionTimes = {
+  enter: 2000,
+  exit: 2000,
+};
+
 const About = () => {
   const [visibleContent, setVisibleContent] = useState(false);
 
   const toggleContent = () => {
     setVisibleContent((prevState) => !prevState);
   };
-
-  // const contentClasses = visibleContent
-  //   ? `${classes["content-wrap"]} ${classes["show-content"]}`
-  //   : `${classes["content-wrap"]}`;
-
-  const personalClasses = visibleContent
-    ? `${classes["personal"]} ${classes["personal-visible-content"]}`
-    : `${classes["personal"]}`;
-  console.log(visibleContent);
 
   return (
     <div className={classes["personal"]}>
@@ -28,7 +24,12 @@ const About = () => {
         </h1>
       </div>
 
-      <Transition in={visibleContent} timeout={1000} mountOnEnter unmountOnExit>
+      <Transition
+        in={visibleContent}
+        timeout={transitionTimes}
+        mountOnEnter
+        unmountOnExit
+      >
         {(state) => {
           const contentClasses = `${classes["content-wrap"]} ${
             state === "entering"
