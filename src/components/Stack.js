@@ -1,21 +1,53 @@
-import React from "react";
+import React, { useContext } from "react";
+import GlobalContext from "../store/GlobalContext";
+import { Transition } from "react-transition-group";
 
-// import SectionWrapper from "./UI/SectionWrapper";
 import classes from "./Stack.module.css";
 
 const Stack = () => {
+  const globalCtx = useContext(GlobalContext);
+  const stackData = globalCtx.data.stack;
+
   return (
-    <div className={classes.stack}>
-      <div className={classes["content-wrap"]}>
-        <p className={classes["content-point"]}>Seniority: Junior</p>
-        <p className={classes["content-point"]}>HTML</p>
-        <p className={classes["content-point"]}>CSS (Sass)</p>
-        <p className={classes["content-point"]}>JavaScript</p>
-        <p className={classes["content-point"]}>React</p>
-        <p className={classes["content-point"]}>GitHub</p>
-      </div>
+    <div className={classes["section-wrap"]}>
+      <Transition
+        in={globalCtx.visibleContent.stack}
+        timeout={globalCtx.transitionTimes}
+        mountOnEnter
+        unmountOnExit
+      >
+        {(state) => {
+          const contentClasses = `${classes["content-wrap"]} ${
+            state === "entering"
+              ? classes["show-content"]
+              : state === "exiting"
+              ? classes["hide-content"]
+              : null
+          }`;
+
+          return (
+            <div className={contentClasses}>
+              <p className={classes["content-point"]}>
+                Seniority {stackData.seniority}
+              </p>
+              <ul className={classes["stack-items"]}>
+                {stackData.stackItems.map((item) => (
+                  <li className={classes["content-point"]}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          );
+        }}
+      </Transition>
       <div className={classes["title-wrap"]}>
-        <h1 className={classes.title}>Stack</h1>
+        <h1
+          className={classes.title}
+          onClick={() => {
+            globalCtx.showContent(stackData.id);
+          }}
+        >
+          Stack
+        </h1>
       </div>
     </div>
   );
