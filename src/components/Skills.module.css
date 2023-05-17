@@ -2,6 +2,10 @@
   height: 20rem;
 }
 
+.title-wrap {
+  justify-self: start;
+}
+
 .title {
   font-size: 7rem;
 }

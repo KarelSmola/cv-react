@@ -1,9 +1,12 @@
 .stack {
   height: 20rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
 }
 
 .title-wrap {
-  justify-self: end;
+  justify-self: start;
   align-self: start;
 }
 
@@ -12,7 +15,8 @@
 }
 
 .content-wrap {
-  justify-self: start;
+  justify-self: end;
+  text-align: right;
   align-self: center;
 }
 
