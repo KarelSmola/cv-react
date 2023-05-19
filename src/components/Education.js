@@ -1,6 +1,7 @@
 import React from "react";
 
 import SectionWrapper from "./UI/SectionWrapper";
+import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Education.module.css";
 
 const Education = () => {
@@ -15,7 +16,7 @@ const Education = () => {
         <p className={classes["content-point"]}>printing industry</p>
       </div>
       <div className={classes["title-wrap"]}>
-        <h1 className={classes.title}>Education</h1>
+        <ButtonTitle className={classes.title}>Education</ButtonTitle>
       </div>
     </SectionWrapper>
   );

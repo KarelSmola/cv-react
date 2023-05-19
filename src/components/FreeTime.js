@@ -2,17 +2,17 @@ import React, { useContext } from "react";
 import GlobalContext from "../store/GlobalContext";
 import { Transition } from "react-transition-group";
 
+import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./FreeTime.module.css";
-
-const contentData = ["Family", "Programming", "Sport", "Reading"];
 
 const FreeTime = () => {
   const globalCtx = useContext(GlobalContext);
+  const freeTimeData = globalCtx.data.freeTime;
 
   return (
     <div className={classes["section-wrap"]}>
       <Transition
-        in={globalCtx.visibleContent}
+        in={globalCtx.visibleContent.freeTime}
         timeout={globalCtx.transitionTimes}
         mountOnEnter
         unmountOnExit
@@ -28,17 +28,27 @@ const FreeTime = () => {
 
           return (
             <ul className={contentClasses}>
-              {contentData.map((item) => (
-                <li className={classes["content-point"]}>{item}</li>
+              {freeTimeData.freeTime.map((item) => (
+                <li
+                  className={classes["content-point"]}
+                  key={Math.random().toString()}
+                >
+                  {item}
+                </li>
               ))}
             </ul>
           );
         }}
       </Transition>
       <div className={classes["title-wrap"]}>
-        <h1 className={classes.title} onClick={globalCtx.showContent}>
+        <ButtonTitle
+          className={classes.title}
+          onClick={() => {
+            globalCtx.showContent(freeTimeData.id);
+          }}
+        >
           Free time
-        </h1>
+        </ButtonTitle>
       </div>
     </div>
   );

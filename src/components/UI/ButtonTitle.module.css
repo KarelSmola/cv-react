@@ -1,0 +1,23 @@
+.title {
+  font-size: 7rem;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  font-family: "Roboto Mono", monospace;
+}
+
+.title:hover {
+  cursor: pointer;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 5px;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background-color: var(--main-color);
+}

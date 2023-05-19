@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import GlobalContext from "../store/GlobalContext";
 import { Transition } from "react-transition-group";
 
+import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Skills.module.css";
 
 const Skills = () => {
@@ -11,14 +12,14 @@ const Skills = () => {
   return (
     <div className={classes["section-wrap"]}>
       <div className={classes["title-wrap"]}>
-        <h1
+        <ButtonTitle
           className={classes.title}
           onClick={() => {
             globalCtx.showContent(skillsData.id);
           }}
         >
           Skills
-        </h1>
+        </ButtonTitle>
       </div>
 
       <Transition
@@ -39,7 +40,10 @@ const Skills = () => {
           return (
             <ul className={contentClasses}>
               {skillsData.skills.map((item) => (
-                <li key={item.index} className={classes["content-point"]}>
+                <li
+                  className={classes["content-point"]}
+                  key={Math.random().toString()}
+                >
                   {item}
                 </li>
               ))}

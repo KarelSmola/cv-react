@@ -1,13 +1,14 @@
 import React from "react";
 
 import SectionWrapper from "./UI/SectionWrapper";
+import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Work.module.css";
 
 const Work = () => {
   return (
     <SectionWrapper className={classes.work}>
       <div className={classes["title-wrap"]}>
-        <h1 className={classes.title}>Work</h1>
+        <ButtonTitle className={classes.title}>Work</ButtonTitle>
       </div>
       <div className={classes["content-wrap"]}>
         <div className={classes["content-point"]}>

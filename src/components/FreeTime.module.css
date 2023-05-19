@@ -27,26 +27,6 @@
   justify-self: start;
 }
 
-.title {
-  font-size: 7rem;
-  position: relative;
-}
-
-.title:hover {
-  cursor: pointer;
-}
-
-.title::after {
-  content: "";
-  position: absolute;
-  display: block;
-  bottom: 5px;
-  left: 0;
-  height: 10px;
-  width: 100%;
-  background-color: var(--main-color);
-}
-
 .content-wrap {
   justify-self: end;
   align-self: start;

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import GlobalContext from "../store/GlobalContext";
 import { Transition } from "react-transition-group";
 
+import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Personal.module.css";
 
 const Personal = () => {
@@ -11,14 +12,14 @@ const Personal = () => {
   return (
     <div className={classes.personal}>
       <div className={classes["title-wrap"]}>
-        <h1
+        <ButtonTitle
           className={classes.title}
           onClick={() => {
             globalCtx.showContent(personalData.id);
           }}
         >
           Personal
-        </h1>
+        </ButtonTitle>
       </div>
 
       <Transition
@@ -47,7 +48,7 @@ const Personal = () => {
               <p>
                 <a
                   className={classes["content-point"]}
-                  href
+                  href="#mail"
                   mailto="karelsmola21@gmail.com"
                 >
                   {personalData.mail}
@@ -56,7 +57,7 @@ const Personal = () => {
               <p>
                 <a
                   className={classes["content-point"]}
-                  href
+                  href="#phone"
                   mailto="karelsmola21@gmail.com"
                 >
                   {personalData.phone}

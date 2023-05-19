@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import GlobalContext from "../store/GlobalContext";
 import { Transition } from "react-transition-group";
 
+import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Stack.module.css";
 
 const Stack = () => {
@@ -32,7 +33,12 @@ const Stack = () => {
               </p>
               <ul className={classes["stack-items"]}>
                 {stackData.stackItems.map((item) => (
-                  <li className={classes["content-point"]}>{item}</li>
+                  <li
+                    className={classes["content-point"]}
+                    key={Math.random().toString()}
+                  >
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -40,14 +46,14 @@ const Stack = () => {
         }}
       </Transition>
       <div className={classes["title-wrap"]}>
-        <h1
+        <ButtonTitle
           className={classes.title}
           onClick={() => {
             globalCtx.showContent(stackData.id);
           }}
         >
           Stack
-        </h1>
+        </ButtonTitle>
       </div>
     </div>
   );

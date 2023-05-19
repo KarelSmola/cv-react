@@ -19,6 +19,10 @@ const data = {
     id: "skills",
     skills: ["Optimistic", "Team player", "Reliable", "Critical thinking"],
   },
+  freeTime: {
+    id: "freeTime",
+    freeTime: ["Family", "Programming", "Sport", "Reading"],
+  },
 };
 
 const GlobalContextProvider = (props) => {
@@ -26,6 +30,7 @@ const GlobalContextProvider = (props) => {
     personal: false,
     stack: false,
     skills: false,
+    freeTime: false,
   });
 
   const transitionTimes = {

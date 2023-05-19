@@ -3,11 +3,6 @@
   grid-template-columns: 1fr 1fr;
   padding: 1rem;
   border: 1px solid var(--main-color);
-  /* height: 20rem; */
-}
-
-.title {
-  font-size: 7rem;
 }
 
 .content-wrap {
