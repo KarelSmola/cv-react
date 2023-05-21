@@ -4,6 +4,7 @@ import { Transition } from "react-transition-group";
 
 import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Skills.module.css";
+import transClasses from "../components/UI/Content.module.css";
 
 const Skills = () => {
   const globalCtx = useContext(GlobalContext);
@@ -29,11 +30,11 @@ const Skills = () => {
         unmountOnExit
       >
         {(state) => {
-          const contentClasses = `${classes["content-wrap"]} ${
+          const contentClasses = `${transClasses["right-content-wrap"]} ${
             state === "entering"
-              ? classes["show-content"]
+              ? transClasses["show-content"]
               : state === "exiting"
-              ? classes["hide-content"]
+              ? transClasses["hide-content"]
               : null
           }`;
 
@@ -41,7 +42,7 @@ const Skills = () => {
             <ul className={contentClasses}>
               {skillsData.skills.map((item) => (
                 <li
-                  className={classes["content-point"]}
+                  className={transClasses["content-point"]}
                   key={Math.random().toString()}
                 >
                   {item}

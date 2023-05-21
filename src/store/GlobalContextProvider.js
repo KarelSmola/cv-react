@@ -19,6 +19,78 @@ const data = {
     id: "skills",
     skills: ["Optimistic", "Team player", "Reliable", "Critical thinking"],
   },
+  education: {
+    id: "education",
+    educationParts: [
+      {
+        school: "Printing Industry High School of Prague",
+        studyTime: { from: 2000, to: 2005 },
+        specialization: "Graphic designer / Printing industry",
+      },
+    ],
+  },
+  work: {
+    id: "work",
+    jobs: [
+      {
+        company: "MTT printing house",
+        positions: [
+          {
+            positionTime: { from: 2000, to: 2005 },
+            position: "Graphic designer",
+            points: [
+              "Adobe software (Illustrator, Photoshop, Adobe InDesign)",
+              "creating of leaflets, magazines, visitcards etc.",
+            ],
+          },
+        ],
+      },
+      {
+        company: "PANFLEX, s. r. o.",
+        positions: [
+          {
+            positionTime: { from: 2005, to: 2006 },
+            position: "DTP operator",
+            points: [
+              "Prepress",
+              "ArtPro",
+              "Adobe Photoshop",
+              "Adobe Illustrator",
+            ],
+          },
+          {
+            positionTime: { from: 2005, to: 2006 },
+            position: "DTP operator",
+            points: [
+              "Prepress",
+              "ArtPro",
+              "Adobe Photoshop",
+              "Adobe Illustrator",
+            ],
+          },
+          {
+            positionTime: { from: 2006, to: 2020 },
+            position: "Technical Support Specialist",
+            points: [
+              "customer support",
+              "customer and employee training",
+              "technical printing support",
+              "problem solver",
+            ],
+          },
+          {
+            positionTime: { from: 2020, to: "now" },
+            position: "Technican",
+            points: [
+              "creating automated worklflows",
+              "creating ways to production efficiency",
+              "ESKO sw: Automation Engine, ArtPro+",
+            ],
+          },
+        ],
+      },
+    ],
+  },
   freeTime: {
     id: "freeTime",
     freeTime: ["Family", "Programming", "Sport", "Reading"],
@@ -30,6 +102,8 @@ const GlobalContextProvider = (props) => {
     personal: false,
     stack: false,
     skills: false,
+    education: false,
+    work: false,
     freeTime: false,
   });
 

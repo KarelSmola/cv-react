@@ -4,6 +4,7 @@ import { Transition } from "react-transition-group";
 
 import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./FreeTime.module.css";
+import transClasses from "../components/UI/Content.module.css";
 
 const FreeTime = () => {
   const globalCtx = useContext(GlobalContext);
@@ -18,25 +19,28 @@ const FreeTime = () => {
         unmountOnExit
       >
         {(state) => {
-          const contentClasses = `${classes["content-wrap"]} ${
+          const contentClasses = `${transClasses["left-content-wrap"]} ${
             state === "entering"
-              ? classes["show-content"]
+              ? transClasses["show-content"]
               : state === "exiting"
-              ? classes["hide-content"]
+              ? transClasses["hide-content"]
               : null
           }`;
 
           return (
-            <ul className={contentClasses}>
+            <div className={contentClasses}>
+
+            <ul className={classes["free-time-items"]}>
               {freeTimeData.freeTime.map((item) => (
                 <li
-                  className={classes["content-point"]}
+                  className={transClasses["content-point"]}
                   key={Math.random().toString()}
                 >
                   {item}
                 </li>
               ))}
             </ul>
+            </div>
           );
         }}
       </Transition>

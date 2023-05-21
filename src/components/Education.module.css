@@ -1,10 +1,17 @@
+.section-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  animation: showSection 1s ease-out forwards;
+}
+
 .education {
-  height: 20rem;
+  /* height: 20rem; */
 }
 
 .title-wrap {
-  justify-self: end;
-  align-self: start;
+  grid-column: 2;
+  justify-self: start;
 }
 
 .content-wrap {

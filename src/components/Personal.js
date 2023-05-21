@@ -4,6 +4,7 @@ import { Transition } from "react-transition-group";
 
 import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Personal.module.css";
+import transClasses from "../components/UI/Content.module.css";
 
 const Personal = () => {
   const globalCtx = useContext(GlobalContext);
@@ -13,7 +14,6 @@ const Personal = () => {
     <div className={classes.personal}>
       <div className={classes["title-wrap"]}>
         <ButtonTitle
-          className={classes.title}
           onClick={() => {
             globalCtx.showContent(personalData.id);
           }}
@@ -29,25 +29,25 @@ const Personal = () => {
         unmountOnExit
       >
         {(state) => {
-          const contentClasses = `${classes["content-wrap"]} ${
+          const contentClasses = `${transClasses["right-content-wrap"]} ${
             state === "entering"
-              ? classes["show-personal-content"]
+              ? transClasses["show-content"]
               : state === "exiting"
-              ? classes["hide-personal-content"]
+              ? transClasses["hide-content"]
               : null
           }`;
 
           return (
             <div className={contentClasses}>
-              <p className={classes["content-point"]}>
+              <p className={transClasses["content-point"]}>
                 {personalData.location}
               </p>
-              <p className={classes["content-point"]}>
+              <p className={transClasses["content-point"]}>
                 {personalData.birthday}
               </p>
               <p>
                 <a
-                  className={classes["content-point"]}
+                  className={transClasses["content-point"]}
                   href="#mail"
                   mailto="karelsmola21@gmail.com"
                 >
@@ -56,7 +56,7 @@ const Personal = () => {
               </p>
               <p>
                 <a
-                  className={classes["content-point"]}
+                  className={transClasses["content-point"]}
                   href="#phone"
                   mailto="karelsmola21@gmail.com"
                 >
