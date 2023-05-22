@@ -53,29 +53,18 @@ const data = {
             position: "DTP operator",
             points: [
               "Prepress",
-              "ArtPro",
-              "Adobe Photoshop",
-              "Adobe Illustrator",
-            ],
-          },
-          {
-            positionTime: { from: 2005, to: 2006 },
-            position: "DTP operator",
-            points: [
-              "Prepress",
-              "ArtPro",
-              "Adobe Photoshop",
-              "Adobe Illustrator",
+              "ESKO software (ArtPro, Nexus)",
+              "Adobe software (Illustrator, Photoshop)",
             ],
           },
           {
             positionTime: { from: 2006, to: 2020 },
             position: "Technical Support Specialist",
             points: [
-              "customer support",
-              "customer and employee training",
-              "technical printing support",
-              "problem solver",
+              "Customer Support",
+              "Customer and Employee Training",
+              "Technical Printing Support",
+              "Problem Polver",
             ],
           },
           {
@@ -84,7 +73,7 @@ const data = {
             points: [
               "creating automated worklflows",
               "creating ways to production efficiency",
-              "ESKO sw: Automation Engine, ArtPro+",
+              "ESKO software (Automation Engine, ArtPro+)",
             ],
           },
         ],
@@ -108,7 +97,7 @@ const GlobalContextProvider = (props) => {
   });
 
   const transitionTimes = {
-    enter: 2000,
+    enter: 1000,
     exit: 500,
   };
 

@@ -9,7 +9,9 @@ import transClasses from "../components/UI/Content.module.css";
 const Work = () => {
   const globalCtx = useContext(GlobalContext);
   const workData = globalCtx.data.work;
-  const company = workData.jobs;
+  console.log(workData);
+  const company_01 = workData.jobs[0];
+  const company_02 = workData.jobs[1];
 
   return (
     <div className={classes.work}>
@@ -40,51 +42,45 @@ const Work = () => {
 
           return (
             <div className={contentClasses}>
-              {company.map((job) => {
-                return (
-                  <div className={transClasses["content-point"]}>
-                    <h2 className={classes.company}>{job.company}</h2>
-                  </div>
-                );
-              })}
+              <div className={transClasses["content-point"]}>
+                <h2 className={classes.company}>{company_01.company}</h2>
+                <div>
+                  {company_01.positions.map((position) => (
+                    <li>
+                      <p className={classes.position}>{position.position}</p>
+                      <p className={classes["position-time"]}>
+                        {position.positionTime.from} -{" "}
+                        {position.positionTime.to}
+                      </p>
+                      <ul className={classes.list}>
+                        {position.points.map((point) => (
+                          <li>{point}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </div>
+              </div>
+              <div className={transClasses["content-point"]}>
+                <h2 className={classes.company}>{company_02.company}</h2>
+                <ul className={classes.list}>
+                  {company_02.positions.map((position) => (
+                    <li>
+                      <p className={classes.position}>{position.position}</p>
+                      <p className={classes["position-time"]}>
+                        {position.positionTime.from} -{" "}
+                        {position.positionTime.to}
+                      </p>
+                      <ul className={classes.list}>
+                        {position.points.map((point) => (
+                          <li>{point}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            // <div className={contentClasses}>
-            //   <div className={transClasses["content-point"]}>
-            //     <h2 className={classes["company"]}>MTT printing house</h2>
-            //     <h3 className={classes.position}>Graphic designer</h3>
-            //     <ul>
-            //       <li>
-            //         Adobe software (Illustrator, Photoshop, Adobe InDesign)
-            //       </li>
-            //       <li>creating of leaflets, magazines, visitcards etc.</li>
-            //     </ul>
-            //   </div>
-            //   <div className={transClasses["content-point"]}>
-            //     <h2 className={classes["company"]}>PANFLEX, s. r. o.</h2>
-            //     <h3 className={classes.position}>DTP operator</h3>
-            //     <ul>
-            //       <li>Prepress</li>
-            //       <li>ArtPro</li>
-            //       <li>Adobe Photoshop</li>
-            //       <li>Adobe Illustrator</li>
-            //     </ul>
-            //     <h3 className={classes.position}>
-            //       Technical Support Specialist
-            //     </h3>
-            //     <ul>
-            //       <li>customer support</li>
-            //       <li>customer and employee training</li>
-            //       <li>technical printing support</li>
-            //       <li>problem solver</li>
-            //     </ul>
-            //     <h3 className={classes.position}>Technician</h3>
-            //     <ul>
-            //       <li>Creating automated worklflows</li>
-            //       <li>creating ways to production efficiency</li>
-            //       <li>ESKO sw: Automation Engine, ArtPro+</li>
-            //     </ul>
-            //   </div>
-            // </div>
           );
         }}
       </Transition>

@@ -32,6 +32,8 @@
   left: -2rem;
   top: 0;
   animation: showYLine 1s 2s ease-out forwards;
+  overflow: auto;
+  scroll-behavior: auto;
 }
 
 .right-content-wrap::after {

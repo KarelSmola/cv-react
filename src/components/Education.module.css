@@ -5,6 +5,23 @@
   animation: showSection 1s ease-out forwards;
 }
 
+@keyframes showSection {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .education {
   /* height: 20rem; */
 }
