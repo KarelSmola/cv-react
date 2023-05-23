@@ -11,7 +11,7 @@ const FreeTime = () => {
   const freeTimeData = globalCtx.data.freeTime;
 
   return (
-    <div className={classes["section-wrap"]}>
+    <div className={classes["section-wrap"]} id="freeTime">
       <Transition
         in={globalCtx.visibleContent.freeTime}
         timeout={globalCtx.transitionTimes}
@@ -29,17 +29,16 @@ const FreeTime = () => {
 
           return (
             <div className={contentClasses}>
-
-            <ul className={classes["free-time-items"]}>
-              {freeTimeData.freeTime.map((item) => (
-                <li
-                  className={transClasses["content-point"]}
-                  key={Math.random().toString()}
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+              <ul className={classes["free-time-items"]}>
+                {freeTimeData.freeTime.map((item) => (
+                  <li
+                    className={transClasses["content-point"]}
+                    key={Math.random().toString()}
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           );
         }}

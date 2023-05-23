@@ -7,7 +7,7 @@ const Navigation = () => {
     <nav className={classes.nav}>
       <ul className={classes["nav-list"]}>
         <li className={classes["nav-item"]}>
-          <a className={classes["nav-link"]} href="personal">
+          <a className={classes["nav-link"]} href="#personal">
             Personal
           </a>
         </li>

@@ -9,7 +9,6 @@ import transClasses from "../components/UI/Content.module.css";
 const Work = () => {
   const globalCtx = useContext(GlobalContext);
   const workData = globalCtx.data.work;
-  console.log(workData);
   const company_01 = workData.jobs[0];
   const company_02 = workData.jobs[1];
 
@@ -42,43 +41,61 @@ const Work = () => {
 
           return (
             <div className={contentClasses}>
-              <div className={transClasses["content-point"]}>
-                <h2 className={classes.company}>{company_01.company}</h2>
-                <div>
-                  {company_01.positions.map((position) => (
-                    <li>
-                      <p className={classes.position}>{position.position}</p>
-                      <p className={classes["position-time"]}>
-                        {position.positionTime.from} -{" "}
-                        {position.positionTime.to}
-                      </p>
-                      <ul className={classes.list}>
-                        {position.points.map((point) => (
-                          <li>{point}</li>
-                        ))}
-                      </ul>
-                    </li>
-                  ))}
+              <div className={classes.companies}>
+                <div className={classes.company}>
+                  <h2 className={classes["company-title"]}>
+                    {company_01.company}
+                  </h2>
+                  <ul className={classes.positions}>
+                    {company_01.positions.map((position) => (
+                      <li className={classes.position}>
+                        <div className={classes["position-title-box"]}>
+                          <p className={classes["position-title"]}>
+                            {position.position}
+                          </p>
+                          <p className={classes["position-time"]}>
+                            {position.positionTime.from} -{" "}
+                            {position.positionTime.to}
+                          </p>
+                        </div>
+                        <ul className={classes["position-content"]}>
+                          {position.points.map((point) => (
+                            <li className={classes["position-content-point"]}>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-              <div className={transClasses["content-point"]}>
-                <h2 className={classes.company}>{company_02.company}</h2>
-                <ul className={classes.list}>
-                  {company_02.positions.map((position) => (
-                    <li>
-                      <p className={classes.position}>{position.position}</p>
-                      <p className={classes["position-time"]}>
-                        {position.positionTime.from} -{" "}
-                        {position.positionTime.to}
-                      </p>
-                      <ul className={classes.list}>
-                        {position.points.map((point) => (
-                          <li>{point}</li>
-                        ))}
-                      </ul>
-                    </li>
-                  ))}
-                </ul>
+                <div className={classes.company}>
+                  <h2 className={classes["company-title"]}>
+                    {company_02.company}
+                  </h2>
+                  <ul className={classes.positions}>
+                    {company_02.positions.map((position) => (
+                      <li className={classes.position}>
+                        <div className={classes["position-title-box"]}>
+                          <p className={classes["position-title"]}>
+                            {position.position}
+                          </p>
+                          <p className={classes["position-time"]}>
+                            {position.positionTime.from} -{" "}
+                            {position.positionTime.to}
+                          </p>
+                        </div>
+                        <ul className={classes["position-content"]}>
+                          {position.points.map((point) => (
+                            <li className={classes["position-content-point"]}>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           );

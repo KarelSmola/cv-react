@@ -29,12 +29,19 @@ const Education = () => {
 
           return (
             <div className={contentClasses}>
-              <p className={transClasses["content-point"]}>
-                Printing Industry High School of Prague
-              </p>
-              <p className={transClasses["content-point"]}>2000 - 2005</p>
-              <p className={transClasses["content-point"]}>graphic designer</p>
-              <p className={transClasses["content-point"]}>printing industry</p>
+              {educationData.educationParts.map((study) => (
+                <div className={classes.school}>
+                  <h2 className={classes["school-title"]}>{study.school}</h2>
+                  <div className={classes["field-title-box"]}>
+                    <p className={classes["field-title"]}>
+                      {study.specialization}
+                    </p>
+                    <p className={classes["school-time"]}>
+                      {study.studyTime.from} - {study.studyTime.to}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           );
         }}

@@ -11,7 +11,7 @@ const Personal = () => {
   const personalData = globalCtx.data.personal;
 
   return (
-    <div className={classes.personal}>
+    <div className={classes.personal} id="personal">
       <div className={classes["title-wrap"]}>
         <ButtonTitle
           onClick={() => {
