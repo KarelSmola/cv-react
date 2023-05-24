@@ -10,4 +10,5 @@
 
 - minimalist design
 - responsive web
+- only grid used (no flexbox), because I wanted to try it
 - animations (React Transition Group)
