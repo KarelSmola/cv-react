@@ -1,9 +1,8 @@
-.section-wrapper {
+.wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 1rem;
-  border: 1px solid var(--main-color);
-  animation: showSection 1s ease-out;
+  gap: 5rem;
+  animation: showSection 1s ease-out forwards;
 }
 
 @keyframes showSection {

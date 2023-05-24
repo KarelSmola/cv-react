@@ -2,16 +2,17 @@ import React, { useContext } from "react";
 import GlobalContext from "../store/GlobalContext";
 import { Transition } from "react-transition-group";
 
+import SectionWrapper from "./UI/SectionWrapper";
 import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./FreeTime.module.css";
-import transClasses from "../components/UI/Content.module.css";
+import globalClasses from "../components/UI/GlobalClasses.module.css";
 
 const FreeTime = () => {
   const globalCtx = useContext(GlobalContext);
   const freeTimeData = globalCtx.data.freeTime;
 
   return (
-    <div className={classes["section-wrap"]} id="freeTime">
+    <SectionWrapper id="freeTime">
       <Transition
         in={globalCtx.visibleContent.freeTime}
         timeout={globalCtx.transitionTimes}
@@ -19,20 +20,20 @@ const FreeTime = () => {
         unmountOnExit
       >
         {(state) => {
-          const contentClasses = `${transClasses["left-content-wrap"]} ${
+          const contentClasses = `${globalClasses["left-content-wrap"]} ${
             state === "entering"
-              ? transClasses["show-content"]
+              ? globalClasses["show-content"]
               : state === "exiting"
-              ? transClasses["hide-content"]
+              ? globalClasses["hide-content"]
               : null
           }`;
 
           return (
             <div className={contentClasses}>
-              <ul className={classes["free-time-items"]}>
+              <ul className={globalClasses["left-content-list"]}>
                 {freeTimeData.freeTime.map((item) => (
                   <li
-                    className={transClasses["content-point"]}
+                    className={globalClasses["left-content-list-point"]}
                     key={Math.random().toString()}
                   >
                     {item}
@@ -43,7 +44,7 @@ const FreeTime = () => {
           );
         }}
       </Transition>
-      <div className={classes["title-wrap"]}>
+      <div className={globalClasses["title-wrap-right"]}>
         <ButtonTitle
           className={classes.title}
           onClick={() => {
@@ -53,7 +54,7 @@ const FreeTime = () => {
           Free time
         </ButtonTitle>
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

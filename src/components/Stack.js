@@ -2,16 +2,16 @@ import React, { useContext } from "react";
 import GlobalContext from "../store/GlobalContext";
 import { Transition } from "react-transition-group";
 
+import SectionWrapper from "./UI/SectionWrapper";
 import ButtonTitle from "./UI/ButtonTitle";
-import classes from "./Stack.module.css";
-import transClasses from "../components/UI/Content.module.css";
+import globalClasses from "../components/UI/GlobalClasses.module.css";
 
 const Stack = () => {
   const globalCtx = useContext(GlobalContext);
   const stackData = globalCtx.data.stack;
 
   return (
-    <div className={classes["section-wrap"]}>
+    <SectionWrapper id="stack">
       <Transition
         in={globalCtx.visibleContent.stack}
         timeout={globalCtx.transitionTimes}
@@ -19,23 +19,23 @@ const Stack = () => {
         unmountOnExit
       >
         {(state) => {
-          const contentClasses = `${transClasses["left-content-wrap"]} ${
+          const contentClasses = `${globalClasses["left-content-wrap"]} ${
             state === "entering"
-              ? transClasses["show-content"]
+              ? globalClasses["show-content"]
               : state === "exiting"
-              ? transClasses["hide-content"]
+              ? globalClasses["hide-content"]
               : null
           }`;
 
           return (
             <div className={contentClasses}>
-              <p className={transClasses["content-point"]}>
-                Seniority {stackData.seniority}
+              <p className={globalClasses["left-content-list-point"]}>
+                Seniority: {stackData.seniority}
               </p>
-              <ul className={classes["stack-items"]}>
+              <ul className={globalClasses["left-content-list"]}>
                 {stackData.stackItems.map((item) => (
                   <li
-                    className={transClasses["content-point"]}
+                    className={globalClasses["left-content-list-point"]}
                     key={Math.random().toString()}
                   >
                     {item}
@@ -46,7 +46,7 @@ const Stack = () => {
           );
         }}
       </Transition>
-      <div className={classes["title-wrap"]}>
+      <div className={globalClasses["title-wrap-right"]}>
         <ButtonTitle
           onClick={() => {
             globalCtx.showContent(stackData.id);
@@ -55,7 +55,7 @@ const Stack = () => {
           Stack
         </ButtonTitle>
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

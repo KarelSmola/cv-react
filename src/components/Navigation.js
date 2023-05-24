@@ -12,15 +12,15 @@ const Navigation = () => {
           </a>
         </li>
         <li className={classes["nav-item"]}>
-          <a className={classes["nav-link"]} href="education">
+          <a className={classes["nav-link"]} href="#education">
             Education
           </a>
         </li>
-        <a className={classes["nav-link"]} href="work">
+        <a className={classes["nav-link"]} href="#work">
           Work
         </a>
         <li className={classes["nav-item"]}>
-          <a className={classes["nav-link"]} href="skills">
+          <a className={classes["nav-link"]} href="#skills">
             Skills
           </a>
         </li>

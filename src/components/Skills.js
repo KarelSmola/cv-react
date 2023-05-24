@@ -2,17 +2,18 @@ import React, { useContext } from "react";
 import GlobalContext from "../store/GlobalContext";
 import { Transition } from "react-transition-group";
 
+import SectionWrapper from "./UI/SectionWrapper";
 import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Skills.module.css";
-import transClasses from "../components/UI/Content.module.css";
+import globalClasses from "../components/UI/GlobalClasses.module.css";
 
 const Skills = () => {
   const globalCtx = useContext(GlobalContext);
   const skillsData = globalCtx.data.skills;
 
   return (
-    <div className={classes["section-wrap"]}>
-      <div className={classes["title-wrap"]}>
+    <SectionWrapper id="skills">
+      <div className={globalClasses["title-wrap-left"]}>
         <ButtonTitle
           className={classes.title}
           onClick={() => {
@@ -30,29 +31,31 @@ const Skills = () => {
         unmountOnExit
       >
         {(state) => {
-          const contentClasses = `${transClasses["right-content-wrap"]} ${
+          const contentClasses = `${globalClasses["right-content-wrap"]} ${
             state === "entering"
-              ? transClasses["show-content"]
+              ? globalClasses["show-content"]
               : state === "exiting"
-              ? transClasses["hide-content"]
+              ? globalClasses["hide-content"]
               : null
           }`;
 
           return (
-            <ul className={contentClasses}>
-              {skillsData.skills.map((item) => (
-                <li
-                  className={transClasses["content-point"]}
-                  key={Math.random().toString()}
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className={contentClasses}>
+              <ul className={globalClasses["right-content-list"]}>
+                {skillsData.skills.map((item) => (
+                  <li
+                    className={globalClasses["right-content-list-point"]}
+                    key={Math.random().toString()}
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           );
         }}
       </Transition>
-    </div>
+    </SectionWrapper>
   );
 };
 

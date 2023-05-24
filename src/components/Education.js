@@ -2,16 +2,17 @@ import React, { useContext } from "react";
 import { Transition } from "react-transition-group";
 import GlobalContext from "../store/GlobalContext";
 
+import SectionWrapper from "./UI/SectionWrapper";
 import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Education.module.css";
-import transClasses from "../components/UI/Content.module.css";
+import globalClasses from "../components/UI/GlobalClasses.module.css";
 
 const Education = () => {
   const globalCtx = useContext(GlobalContext);
   const educationData = globalCtx.data.education;
 
   return (
-    <div className={classes["section-wrap"]}>
+    <SectionWrapper id="education">
       <Transition
         in={globalCtx.visibleContent.education}
         timeout={globalCtx.transitionTimes}
@@ -19,11 +20,11 @@ const Education = () => {
         unmountOnExit
       >
         {(state) => {
-          const contentClasses = `${transClasses["left-content-wrap"]} ${
+          const contentClasses = `${globalClasses["left-content-wrap"]} ${
             state === "entering"
-              ? transClasses["show-content"]
+              ? globalClasses["show-content"]
               : state === "exiting"
-              ? transClasses["hide-content"]
+              ? globalClasses["hide-content"]
               : null
           }`;
 
@@ -47,7 +48,7 @@ const Education = () => {
         }}
       </Transition>
 
-      <div className={classes["title-wrap"]}>
+      <div className={globalClasses["title-wrap-right"]}>
         <ButtonTitle
           className={classes.title}
           onClick={() => {
@@ -57,7 +58,7 @@ const Education = () => {
           Education
         </ButtonTitle>
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

@@ -1,31 +1,3 @@
-.work {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  animation: showSection 1s ease-out forwards;
-}
-
-@keyframes showSection {
-  0% {
-    opacity: 0;
-    transform: translateY(-20%);
-  }
-
-  50% {
-    opacity: 0.5;
-    transform: translateY(10%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.title-wrap {
-  justify-self: end;
-}
-
 .companies {
   display: grid;
   row-gap: 3rem;
@@ -65,37 +37,4 @@
 .position-time {
   font-size: 1.8rem;
   font-weight: 500;
-}
-
-.position-content {
-  display: grid;
-  row-gap: 0.2rem;
-  list-style: none;
-}
-
-.position-content-point {
-  font-size: 1.8rem;
-  font-weight: 300;
-  position: relative;
-  /* padding-left: 1.5rem; */
-}
-
-.position-content-point::before {
-  content: "";
-  width: 1.1rem;
-  height: 1.1rem;
-  position: absolute;
-  left: -2.5rem;
-  top: 0.8rem;
-  border-right: 1px solid var(--main-color);
-  border-bottom: 1px solid var(--main-color);
-  background-image: linear-gradient(
-    to left top,
-    var(--main-color) 0%,
-    var(--main-color) 50%,
-    #fff 50%,
-    #fff 100%
-  );
-
-  transform: rotate(-45deg);
 }

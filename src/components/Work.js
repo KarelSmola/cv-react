@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { Transition } from "react-transition-group";
 import GlobalContext from "../store/GlobalContext";
 
+import SectionWrapper from "./UI/SectionWrapper";
 import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Work.module.css";
-import transClasses from "../components/UI/Content.module.css";
+import globalClasses from "../components/UI/GlobalClasses.module.css";
 
 const Work = () => {
   const globalCtx = useContext(GlobalContext);
@@ -13,8 +14,8 @@ const Work = () => {
   const company_02 = workData.jobs[1];
 
   return (
-    <div className={classes.work}>
-      <div className={classes["title-wrap"]}>
+    <SectionWrapper id="work">
+      <div className={globalClasses["title-wrap-left"]}>
         <ButtonTitle
           className={classes.title}
           onClick={() => {
@@ -31,11 +32,11 @@ const Work = () => {
         unmountOnExit
       >
         {(state) => {
-          const contentClasses = `${transClasses["right-content-wrap"]} ${
+          const contentClasses = `${globalClasses["right-content-wrap"]} ${
             state === "entering"
-              ? transClasses["show-content"]
+              ? globalClasses["show-content"]
               : state === "exiting"
-              ? transClasses["hide-content"]
+              ? globalClasses["hide-content"]
               : null
           }`;
 
@@ -58,9 +59,13 @@ const Work = () => {
                             {position.positionTime.to}
                           </p>
                         </div>
-                        <ul className={classes["position-content"]}>
+                        <ul className={globalClasses["right-content-list"]}>
                           {position.points.map((point) => (
-                            <li className={classes["position-content-point"]}>
+                            <li
+                              className={
+                                globalClasses["right-content-list-point"]
+                              }
+                            >
                               {point}
                             </li>
                           ))}
@@ -85,9 +90,13 @@ const Work = () => {
                             {position.positionTime.to}
                           </p>
                         </div>
-                        <ul className={classes["position-content"]}>
+                        <ul className={globalClasses["right-content-list"]}>
                           {position.points.map((point) => (
-                            <li className={classes["position-content-point"]}>
+                            <li
+                              className={
+                                globalClasses["right-content-list-point"]
+                              }
+                            >
                               {point}
                             </li>
                           ))}
@@ -101,7 +110,7 @@ const Work = () => {
           );
         }}
       </Transition>
-    </div>
+    </SectionWrapper>
   );
 };
 

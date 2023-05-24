@@ -2,17 +2,26 @@ import React, { useContext } from "react";
 import GlobalContext from "../store/GlobalContext";
 import { Transition } from "react-transition-group";
 
+import {
+  MapPin,
+  BirthStar,
+  Email,
+  Phone,
+  GitHub,
+  LinkedIn,
+} from "./UI/icons/Icons";
+import SectionWrapper from "./UI/SectionWrapper";
 import ButtonTitle from "./UI/ButtonTitle";
 import classes from "./Personal.module.css";
-import transClasses from "../components/UI/Content.module.css";
+import globalClasses from "../components/UI/GlobalClasses.module.css";
 
 const Personal = () => {
   const globalCtx = useContext(GlobalContext);
   const personalData = globalCtx.data.personal;
 
   return (
-    <div className={classes.personal} id="personal">
-      <div className={classes["title-wrap"]}>
+    <SectionWrapper id="personal">
+      <div className={globalClasses["title-wrap-left"]}>
         <ButtonTitle
           onClick={() => {
             globalCtx.showContent(personalData.id);
@@ -29,45 +38,75 @@ const Personal = () => {
         unmountOnExit
       >
         {(state) => {
-          const contentClasses = `${transClasses["right-content-wrap"]} ${
+          const contentClasses = `${globalClasses["right-content-wrap"]} ${
             state === "entering"
-              ? transClasses["show-content"]
+              ? globalClasses["show-content"]
               : state === "exiting"
-              ? transClasses["hide-content"]
+              ? globalClasses["hide-content"]
               : null
           }`;
 
           return (
             <div className={contentClasses}>
-              <p className={transClasses["content-point"]}>
-                {personalData.location}
-              </p>
-              <p className={transClasses["content-point"]}>
-                {personalData.birthday}
-              </p>
-              <p>
-                <a
-                  className={transClasses["content-point"]}
-                  href="#mail"
-                  mailto="karelsmola21@gmail.com"
-                >
-                  {personalData.mail}
-                </a>
-              </p>
-              <p>
-                <a
-                  className={transClasses["content-point"]}
-                  href="#phone"
-                  mailto="karelsmola21@gmail.com"
-                >
-                  {personalData.phone}
-                </a>
-              </p>
+              <div className={classes.personal}>
+                <div className={classes.about}>
+                  <div className={classes["point-box"]}>
+                    <MapPin className={classes.icon} />
+                    <p className={classes.location}>{personalData.location}</p>
+                  </div>
+                  <div className={classes["point-box"]}>
+                    <BirthStar className={classes.icon} />
+                    <p className={classes.birth}>{personalData.birthday}</p>
+                  </div>
+                  <div className={classes["point-box"]}>
+                    <Email className={classes.icon} />
+                    <p>
+                      <a
+                        className={classes.mail}
+                        href="#mail"
+                        mailto="karelsmola21@gmail.com"
+                      >
+                        {personalData.mail}
+                      </a>
+                    </p>
+                  </div>
+                  <div className={classes["point-box"]}>
+                    <Phone className={classes.icon} />
+                    <p>
+                      <a
+                        className={classes.phone}
+                        href="#phone"
+                        mailto="karelsmola21@gmail.com"
+                      >
+                        {personalData.phone}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div className={classes["social-networks"]}>
+                  <a
+                    className={classes.github}
+                    href="https://github.com/KarelSmola"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <GitHub />
+                  </a>
+                  <a
+                    className={classes.linkedin}
+                    href="https://www.linkedin.com/in/karel-smola-98400312a/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <LinkedIn />
+                  </a>
+                </div>
+              </div>
             </div>
           );
         }}
       </Transition>
-    </div>
+    </SectionWrapper>
   );
 };
 
