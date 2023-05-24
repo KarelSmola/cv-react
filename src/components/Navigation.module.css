@@ -1,6 +1,6 @@
 .nav {
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  justify-content: center;
   align-items: center;
   padding: 0 2rem;
   height: 7rem;
@@ -13,8 +13,9 @@
 }
 
 .nav-list {
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  column-gap: 2rem;
   list-style: none;
 }
 

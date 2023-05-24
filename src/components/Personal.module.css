@@ -36,6 +36,7 @@
 
 .mail:hover,
 .phone:hover {
+  color: var(--main-color);
   transform: scale(1.02);
 }
 

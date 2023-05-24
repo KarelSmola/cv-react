@@ -1,6 +1,6 @@
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 5rem;
   animation: showSection 1s ease-out forwards;
 }
@@ -14,6 +14,17 @@
   50% {
     opacity: 0.5;
     transform: translateY(10%);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+
+    transform: scale(1.05);
   }
 
   100% {

@@ -10,6 +10,8 @@
 
 .title:hover {
   cursor: pointer;
+  transform: scale(1.02);
+  color: var(--main-color);
 }
 
 .title::after {

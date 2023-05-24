@@ -12,6 +12,16 @@ const Navigation = () => {
           </a>
         </li>
         <li className={classes["nav-item"]}>
+          <a className={classes["nav-link"]} href="#stack">
+            Stack
+          </a>
+        </li>
+        <li className={classes["nav-item"]}>
+          <a className={classes["nav-link"]} href="#skills">
+            Skills
+          </a>
+        </li>
+        <li className={classes["nav-item"]}>
           <a className={classes["nav-link"]} href="#education">
             Education
           </a>
@@ -19,11 +29,6 @@ const Navigation = () => {
         <a className={classes["nav-link"]} href="#work">
           Work
         </a>
-        <li className={classes["nav-item"]}>
-          <a className={classes["nav-link"]} href="#skills">
-            Skills
-          </a>
-        </li>
         <li className={classes["nav-item"]}>
           <a className={classes["nav-link"]} href="#freeTime">
             Free time
