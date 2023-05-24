@@ -24,3 +24,26 @@
   width: 100%;
   background-color: var(--main-color);
 }
+
+@media (max-width: 50em) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 30em) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 3px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: var(--main-color);
+  }
+}

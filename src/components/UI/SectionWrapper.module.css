@@ -32,3 +32,11 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 50em) {
+  .wrapper {
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+  }
+}

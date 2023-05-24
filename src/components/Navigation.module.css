@@ -1,6 +1,6 @@
-.nav {
+.navigation {
   display: grid;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
   padding: 0 2rem;
   height: 7rem;
@@ -10,6 +10,14 @@
   top: 0;
   z-index: 99;
   margin-bottom: 2rem;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1rem;
+  align-items: center;
+  position: relative;
 }
 
 .nav-list {
@@ -46,4 +54,109 @@
 .nav-link:hover::after {
   transform: scale(1);
   transform-origin: left;
+}
+
+.mobile-nav-btn {
+  display: none;
+}
+
+@media (max-width: 50em) {
+  .navigation {
+    justify-items: end;
+  }
+
+  .nav-list {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 8rem);
+    row-gap: 3rem;
+    justify-items: center;
+    padding-top: 7rem;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    background-color: var(--main-color);
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .visible .nav-list {
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    font-size: 5rem;
+  }
+
+  .mobile-nav-btn {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: none;
+    z-index: 10;
+  }
+
+  .mobile-nav-btn:hover {
+    cursor: pointer;
+  }
+
+  .menu {
+    width: 4rem;
+    height: 0.3rem;
+    background-color: #fff;
+    position: relative;
+    z-index: 100;
+  }
+
+  .menu::before {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 0.3rem;
+    background-color: #fff;
+    position: absolute;
+    top: -1rem;
+    transition: all 0.2s ease-out;
+  }
+
+  .menu::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 0.3rem;
+    background-color: #fff;
+    position: absolute;
+    top: 1rem;
+    transition: all 0.2s ease-out;
+  }
+
+  .mobile-nav-btn:hover .menu,
+  .cross .menu {
+    background-color: transparent;
+  }
+
+  .mobile-nav-btn:hover .menu::before,
+  .cross .menu::before {
+    top: 0rem;
+    transform: rotate(135deg);
+  }
+
+  .mobile-nav-btn:hover .menu::after,
+  .cross .menu::after {
+    top: 0rem;
+    transform: rotate(-135deg);
+  }
+}
+
+@media (max-width: 50em) {
+  .nav-link {
+    font-size: 4rem;
+  }
 }

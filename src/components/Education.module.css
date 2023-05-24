@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 1rem;
-  justify-items: start;
+  justify-items: end;
 }
 
 .school-title {
@@ -32,4 +32,10 @@
 .school-time {
   font-size: 1.8rem;
   font-weight: 500;
+}
+
+@media (max-width: 30em) {
+  .school-title {
+    font-size: 2rem;
+  }
 }

@@ -38,3 +38,9 @@
   font-size: 1.8rem;
   font-weight: 500;
 }
+
+@media (max-width: 30em) {
+  .company-title {
+    font-size: 2rem;
+  }
+}

@@ -242,3 +242,37 @@
   font-weight: 300;
   line-height: 1.5;
 }
+
+@media (max-width: 50em) {
+  .title-wrap-left {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .right-content-wrap {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    align-self: start;
+    position: relative;
+    list-style: none;
+    padding: 0 0 1rem 0;
+  }
+
+  .title-wrap-right {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .left-content-wrap {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    align-self: start;
+    position: relative;
+    padding: 0 0 1rem 0;
+    text-align: right;
+  }
+}

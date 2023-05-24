@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Work from "./components/Work";
 import FreeTime from "./components/FreeTime";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Work />
         <FreeTime />
       </Wrapper>
+      <Footer />
     </main>
   );
 };
